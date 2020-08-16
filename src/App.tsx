@@ -1,24 +1,30 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useState } from 'react';
 import './App.css';
+import Scoreboard from './Scoreboard';
+import Buttons from './Buttons';
 
 function App() {
+
+  let [state, setState] = useState<number>(0)
+
+  let [disables, setDisables] = useState<boolean>(true)
+
+  function inc(number: number) {
+    if (state < 5) {
+      setState(state+1)
+    }
+    setDisables(false)
+  }
+
+  function reset(number: number){
+    setState(0)
+    setDisables(true)
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="count">
+      <Scoreboard state={state} />
+      <Buttons inc={inc} reset={reset} disables={disables} state={state}/>
     </div>
   );
 }
