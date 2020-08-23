@@ -1,46 +1,54 @@
+.app{
+  background: #7BDFF2;
+  min-height: 100vh;
+  height: 100%; 
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
 .count {
   border-radius: 5px;
-  position: relative;
   height: 300px;
   width: 370px;
-  margin-left: 35%;
-  margin-top: 10%;
-  background: rgb(73, 74, 83);
+  background: #ffffff;
   border: 2px solid rgb(0, 0, 0);
 }
 
-.number {
+
+.displaying {
   border-radius: 15px;
   border: 2px solid black;
   margin: 10px;
-  background: rgb(235, 213, 92);
+  background: #FF3B1D;
   height: 180px;
   width: 346px;
   text-align: center;
   font-size: 100px;
 }
 
-.over{
-  color: red;
+.white{
+  color: white;
   font-size: 120px;
 }
 
 
-.buttons {
+.displaying1 {
   border-radius: 15px;
   display: flex;
+  justify-content: space-around;
   border: 2px solid black;
   margin: 10px;
-  background: rgb(235, 213, 92);
+  background: #FF3B1D;
   height: 80px;
   width: 346px;
 }
 
-.reset {
+.button {
   border-radius: 15px;
   border: 2px solid black;
   margin: 8px;
-  background: rgb(175, 166, 162);
+  background: #ffffff;
   height: 60px;
   width: 152px;
   text-align: center;
@@ -48,14 +56,19 @@
   outline: none;
 }
 
-.inc {
-  border-radius: 15px;
-  border: 2px solid black;
-  margin: 8px;
-  background: rgb(175, 166, 162);
-  height: 60px;
-  width: 152px;
-  text-align: center;
+.item{
+  display: flex;
+}
+
+.value{
+  white-space: pre;
   font-size: 30px;
-  outline: none;
+  margin: 20px 0px 20px 20px;
+  width: 100px;
+}
+
+.input{
+  height: 30px;
+  width: 100px;
+  margin: 25px 50px 0px 100px;
 }

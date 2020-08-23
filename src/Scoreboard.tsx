@@ -1,15 +1,12 @@
 import React from 'react';
 
 type ScoreboardPropsType = {
-    state: number
+    startValue: number
 }
 
-const Scoreboard = (props: ScoreboardPropsType) => {
-
-    const { state } = props
-
-    return <div className="number">
-        <div className={state === 5 ? 'over' : ''}>{state}</div>
+const Scoreboard = (props:ScoreboardPropsType) => {
+    return <div className={props.startValue === 5? 'white' : ''}>
+        {props.startValue }
     </div>
 }
 
