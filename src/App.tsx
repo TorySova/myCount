@@ -6,8 +6,6 @@ import Setting from './Setting';
 function App() {
 
   let [startValue, setStartValue] = useState<number>(0)
-  let [minValue, setMinValue] = useState<number>(0)
-  let [maxValue, setMaxValue] = useState<number>(0)
 
   const inc = () => {
     if (startValue < 5) {
@@ -16,7 +14,6 @@ function App() {
   }
 
   function reset() {
-    debugger
     setStartValue(0)
   }
 
