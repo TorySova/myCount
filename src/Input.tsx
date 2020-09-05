@@ -2,16 +2,26 @@ import React, { ChangeEvent } from 'react';
 
 type PropsType = {
     name: string
+    value: number
+    setValue: (valeu: number) => void
+    error: string
 }
 
 
 const Input = (props: PropsType) => {
-    
+    const {name, setValue, value, error} = props
+    const onChangeHeandler = (e: ChangeEvent<HTMLInputElement>) => {
+        setValue(+e.currentTarget.value)
+    }
+
     return (
         <div className='item'>
-        <span className='value'>{props.name}</span>
+        <span className='value'>{name}</span>
         <input type="number"
-            className={"input"}/>
+            min ='-1'
+            value={value}
+            className={error? 'inputError' : 'input'}
+            onChange={onChangeHeandler}/>
     </div>
     )
 }

@@ -1,5 +1,5 @@
 .app{
-  background: #7BDFF2;
+  background: #004643;
   min-height: 100vh;
   height: 100%; 
   display: flex;
@@ -11,7 +11,7 @@
   border-radius: 5px;
   height: 300px;
   width: 370px;
-  background: #ffffff;
+  background: #abd1c6;
   border: 2px solid rgb(0, 0, 0);
 }
 
@@ -20,16 +20,25 @@
   border-radius: 15px;
   border: 2px solid black;
   margin: 10px;
-  background: #7BDFF2;
+  background: #f9bc60;
   height: 180px;
   width: 346px;
   text-align: center;
+}
+
+.maxValue{
+  color: red;
   font-size: 100px;
 }
 
-.white{
-  color: white;
-  font-size: 120px;
+.textError{
+  color: red;
+  font-size: 20px;
+  background: rgb(241, 213, 213);
+}
+
+.number{
+  font-size: 100px;
 }
 
 
@@ -39,7 +48,7 @@
   justify-content: space-around;
   border: 2px solid black;
   margin: 10px;
-  background: #7BDFF2;
+  background: #f9bc60;
   height: 80px;
   width: 346px;
 }
@@ -68,7 +77,20 @@
 }
 
 .input{
+  border-radius: 5px;
   height: 30px;
   width: 100px;
   margin: 25px 50px 0px 100px;
+  outline: none;
+}
+
+.inputError{
+  border-radius: 5px;
+  height: 30px;
+  width: 100px;
+  margin: 25px 50px 0px 100px;
+  border: solid 2px red;
+  outline: none;
+  box-shadow: 0 0 15px rgb(3, 3, 3);
+  background: rgb(241, 213, 213);
 }

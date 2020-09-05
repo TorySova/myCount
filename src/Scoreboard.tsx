@@ -1,13 +1,17 @@
 import React from 'react';
 
 type ScoreboardPropsType = {
-    startValue: number
+    count: number
+    maxValue: number
+    error: string
 }
 
 const Scoreboard = (props:ScoreboardPropsType) => {
-    return <div className={props.startValue === 5? 'white' : ''}>
-        {props.startValue }
-    </div>
+    const {count, error, maxValue} = props
+    return <>
+        <div className={count === maxValue? 'maxValue' : 'number'}>{count}</div>
+        <div className='textError'>{error? error : '' }</div>
+    </>
 }
 
 export default Scoreboard;
