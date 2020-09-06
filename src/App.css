@@ -1,22 +1,53 @@
-.app{
+/* .app{
   background: #004643;
   min-height: 100vh;
   height: 100%; 
   display: flex;
   justify-content: space-around;
   align-items: center;
+} */
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.count {
+body{
+  background: #004643;
+  min-height: 100vh;
+  height: 100%; 
+}
+
+.app {
+  /* text-align: center; */
+  max-width: 1000px;
+  margin: 50px auto;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+/* .count {
   border-radius: 5px;
   height: 300px;
   width: 370px;
   background: #abd1c6;
   border: 2px solid rgb(0, 0, 0);
+} */
+
+.count{
+  border: 2px solid rgb(0, 0, 0);
+  border-radius: 5px;
+  padding: 10px;
+  margin: 10px;
+  background: #abd1c6;
+  height: 300px;
+  min-width: 370px;
 }
 
 
-.displaying {
+/* .displaying {
   border-radius: 15px;
   border: 2px solid black;
   margin: 10px;
@@ -24,25 +55,38 @@
   height: 180px;
   width: 346px;
   text-align: center;
+} */
+
+.displaying{
+  background: #f9bc60;
+  border: 2px solid black;
+  border-radius: 15px;
+  padding: 10px;
+  height: 65%;
+  max-width: 100%;
 }
 
 .maxValue{
   color: red;
-  font-size: 100px;
+  font-size: 80px;
 }
 
 .textError{
   color: red;
   font-size: 20px;
+  text-align: center;
   background: rgb(241, 213, 213);
+  box-shadow: 0 0 15px rgb(3, 3, 3);
+  border-radius: 5px;
 }
 
 .number{
-  font-size: 100px;
+  text-align: center;
+  font-size: 80px;
 }
 
 
-.displaying1 {
+/* .displaying1 {
   border-radius: 15px;
   display: flex;
   justify-content: space-around;
@@ -51,6 +95,18 @@
   background: #f9bc60;
   height: 80px;
   width: 346px;
+} */
+
+.displaying1{
+  display: flex;
+  justify-content: space-around;
+  border: 2px solid black;
+  border-radius: 15px;
+  background: #f9bc60;
+  height: 80px;
+  min-width: 100%;
+  align-items: center;
+  margin-top: 10px;
 }
 
 .button {
@@ -58,15 +114,19 @@
   border: 2px solid black;
   margin: 8px;
   background: #ffffff;
-  height: 60px;
-  width: 152px;
+  height: 50px;
+  width: 140px;
   text-align: center;
-  font-size: 30px;
+  font-size: 20px;
   outline: none;
 }
 
 .item{
   display: flex;
+    align-items: center;
+    height: 40%;
+    justify-content: space-between;
+    font-size: 20px;
 }
 
 .value{
@@ -76,19 +136,26 @@
   width: 100px;
 }
 
-.input{
+/* .input{
   border-radius: 5px;
   height: 30px;
   width: 100px;
   margin: 25px 50px 0px 100px;
+  outline: none;
+} */
+
+.input{
+  border-radius: 5px;
+  height: 30px;
+  width: 150px;
   outline: none;
 }
 
 .inputError{
   border-radius: 5px;
   height: 30px;
-  width: 100px;
-  margin: 25px 50px 0px 100px;
+  width: 150px;
+  /* margin: 25px 50px 0px 100px; */
   border: solid 2px red;
   outline: none;
   box-shadow: 0 0 15px rgb(3, 3, 3);
