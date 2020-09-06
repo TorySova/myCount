@@ -69,6 +69,7 @@ body{
 .maxValue{
   color: red;
   font-size: 80px;
+  text-align: center;
 }
 
 .textError{
