@@ -19,20 +19,20 @@ const Setting = (props: PropsRype) => {
     const [maxValueLocal, setMaxValueLocal] = useState<number>(maxValue);
 
     const isError = useCallback(() => {
-        if(minValueLocal < 0 ) {
+        if (minValueLocal < 0) {
             setError('min не может быть меньше 0')
-        }else if(minValueLocal === maxValueLocal) {
+        } else if (minValueLocal === maxValueLocal) {
             setError('min не может быть равен max')
-        }else if(minValueLocal > maxValueLocal) {
+        } else if (minValueLocal > maxValueLocal) {
             setError('min не может быть больше max')
-        }else {
+        } else {
             setError('')
         }
     }, [minValueLocal, maxValueLocal, setError])
 
     useEffect(() => {
         isError()
-      }, [minValueLocal, maxValueLocal, isError])
+    }, [minValueLocal, maxValueLocal, isError])
 
     const onChangeHeandler = () => {
         setMaxValue(maxValueLocal)
@@ -45,11 +45,11 @@ const Setting = (props: PropsRype) => {
 
     return <div className='count'>
         <div className='displaying'>
-            <Input name={'max value'} value={maxValueLocal} setValue={setMaxValueLocal} error={error}/>
-            <Input name={'min value'} value={minValueLocal} setValue={setMinValueLocal} error={error}/>
+            <Input name={'min value'} value={minValueLocal} setValue={setMinValueLocal} error={error} />
+            <Input name={'max value'} value={maxValueLocal} setValue={setMaxValueLocal} error={error} />
         </div>
         <div className='displaying1'>
-            <Buttons title={'set'} onClick={onChangeHeandler} disabled={error!==''} />
+            <Buttons title={'set'} onClick={onChangeHeandler} disabled={error !== ''} />
         </div>
     </div>
 }
