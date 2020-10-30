@@ -18,7 +18,7 @@ const Input = (props: PropsType) => {
             <span >{name}</span>
             <input type="number"
                 min='-1'
-                // value={value}
+                value={value}
                 className={error ? 'inputError' : 'input'}
                 onChange={onChangeHeandler} />
         </div>

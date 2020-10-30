@@ -1,11 +1,10 @@
-type StateType = {
-    maxValue: number
-    minValue: number
-}
+type StateType = typeof initialState
 
 const initialState = {
     maxValue: 0,
-    minValue: 0
+    minValue: 0,
+    error: '',
+    count: 0
 }
 
 type ActionType = incValueType | resetValueType
@@ -21,6 +20,8 @@ type resetValueType = {
 export const countReducer = (state: StateType = initialState, action: ActionType) => {
     switch (action.type) {
         case 'INC-VALUE':
+
+        
             return { ...state, minValue: state.minValue + 1 };
         case 'RESET-VALUE':
             return { ...state, minValue: state.minValue };

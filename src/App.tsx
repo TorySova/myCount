@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import './App.css';
 import Count from './Count';
 import Setting from './Setting';
@@ -9,6 +9,16 @@ function App() {
   const [minValue, setMinValue] = useState<number>(count)
   const [maxValue, setMaxValue] = useState<number>(1)
   const [error, setError] = useState<string>('')
+
+
+  useEffect(() => {
+    const stateAsString = localStorage.getItem('minValue')
+    if (stateAsString) {
+      const state = JSON.parse(stateAsString)
+    }
+
+
+  }, [])
 
   const inc = () => {
     if (count < maxValue) {
@@ -23,18 +33,18 @@ function App() {
   return (
     <div className="app">
       <Setting setCount={setCount}
-              setMaxValue={setMaxValue}
-              count={count}
-              maxValue={maxValue}
-              error={error}
-              setError={setError}
-              setMinValue={setMinValue}/>
+        setMaxValue={setMaxValue}
+        count={count}
+        maxValue={maxValue}
+        error={error}
+        setError={setError}
+        setMinValue={setMinValue} />
       <Count inc={inc}
-            reset={reset}
-            minValue={minValue}
-            maxValue={maxValue}
-            count={count}
-            error={error}  />
+        reset={reset}
+        minValue={minValue}
+        maxValue={maxValue}
+        count={count}
+        error={error} />
     </div>
   );
 }

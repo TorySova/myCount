@@ -1,4 +1,4 @@
-import React, { ChangeEvent, useState, useEffect, useCallback } from 'react';
+import React, { useState, useEffect } from 'react';
 import Buttons from './Buttons';
 import Input from './Input';
 
@@ -32,6 +32,15 @@ const Setting = (props: PropsRype) => {
     }, [minValueLocal, maxValueLocal])
 
     const onChangeHeandler = () => {
+
+        // let a = {
+        //     max: 10,
+        //     min: 3
+        // }
+
+        localStorage.setItem('minValue', JSON.stringify(minValueLocal) )
+        localStorage.setItem('maxValue', JSON.stringify(maxValueLocal) )
+
         setMaxValue(maxValueLocal)
         setCount(minValueLocal)
         setMinValue(minValueLocal)
