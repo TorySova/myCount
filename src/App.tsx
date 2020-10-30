@@ -5,36 +5,35 @@ import Setting from './Setting';
 
 function App() {
 
-  const [startValue, setStartValue] = useState<number>(0)
-  const [count, setCount] = useState<number>(startValue)
+  const [count, setCount] = useState<number>(0)
+  const [minValue, setMinValue] = useState<number>(count)
   const [maxValue, setMaxValue] = useState<number>(1)
   const [error, setError] = useState<string>('')
 
-
   const inc = () => {
     if (count < maxValue) {
-      setCount(count + 1)
+      setMinValue(minValue + 1)
     }
   }
 
   function reset() {
-    setCount(startValue)
+    setMinValue(count)
   }
 
   return (
     <div className="app">
-      <Setting setStartValue={setStartValue}
+      <Setting setCount={setCount}
               setMaxValue={setMaxValue}
-              startValue={startValue}
+              count={count}
               maxValue={maxValue}
               error={error}
               setError={setError}
-              setCount={setCount}/>
+              setMinValue={setMinValue}/>
       <Count inc={inc}
             reset={reset}
-            count={count}
+            minValue={minValue}
             maxValue={maxValue}
-            startValue={startValue}
+            count={count}
             error={error}  />
     </div>
   );

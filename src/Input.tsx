@@ -7,7 +7,6 @@ type PropsType = {
     error: string
 }
 
-
 const Input = (props: PropsType) => {
     const { name, setValue, value, error } = props
     const onChangeHeandler = (e: ChangeEvent<HTMLInputElement>) => {

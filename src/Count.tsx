@@ -5,9 +5,9 @@ import Buttons from './Buttons';
 type CountPropsType = {
     inc: () => void
     reset: () => void
-    count: number
+    minValue: number
     maxValue: number
-    startValue: number
+    count: number
     error: string
 }
 
@@ -15,11 +15,11 @@ const Count = (props: CountPropsType) => {
 
     return <div className='count'>
         <div className='displaying'>
-            <Scoreboard count={props.count } maxValue={props.maxValue} error={props.error}/>
+            <Scoreboard count={props.minValue } maxValue={props.maxValue} error={props.error}/>
         </div>
         <div className='displaying1'>
-            <Buttons title={'inc'} onClick={props.inc} disabled={props.count === props.maxValue || props.error!==''}/>
-            <Buttons title={'reset'} onClick={props.reset} disabled={props.count === props.startValue || props.error!==''}/>
+            <Buttons title={'inc'} onClick={props.inc} disabled={props.minValue === props.maxValue || props.error!==''}/>
+            <Buttons title={'reset'} onClick={props.reset} disabled={props.minValue === props.count || props.error!==''}/>
         </div>
     </div>
 }
