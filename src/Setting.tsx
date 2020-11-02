@@ -10,12 +10,13 @@ type PropsRype = {
     error: string
     setError: (error: string) => void
     setMinValue: (value: number) => void
+    minValue: number
 }
 
 const Setting = (props: PropsRype) => {
-    const { error, maxValue, count, setError, setMaxValue, setCount, setMinValue } = props
+    const { error, maxValue,  minValue, setError, setMaxValue, setCount, setMinValue } = props
 
-    const [minValueLocal, setMinValueLocal] = useState<number>(0);
+    const [minValueLocal, setMinValueLocal] = useState<number>(minValue);
     const [maxValueLocal, setMaxValueLocal] = useState<number>(maxValue);
 
 
@@ -32,14 +33,8 @@ const Setting = (props: PropsRype) => {
     }, [minValueLocal, maxValueLocal])
 
     const onChangeHeandler = () => {
-
-        // let a = {
-        //     max: 10,
-        //     min: 3
-        // }
-
-        localStorage.setItem('minValue', JSON.stringify(minValueLocal) )
-        localStorage.setItem('maxValue', JSON.stringify(maxValueLocal) )
+        localStorage.setItem('minValue', minValueLocal.toString() )
+        localStorage.setItem('maxValue', maxValueLocal.toString() )
 
         setMaxValue(maxValueLocal)
         setCount(minValueLocal)

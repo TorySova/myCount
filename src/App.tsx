@@ -6,19 +6,19 @@ import Setting from './Setting';
 function App() {
 
   const [count, setCount] = useState<number>(0)
-  const [minValue, setMinValue] = useState<number>(count)
-  const [maxValue, setMaxValue] = useState<number>(1)
+  const [minValue, setMinValue] = useState<number>(Number(localStorage.getItem('minValue')))
+  const [maxValue, setMaxValue] = useState<number>(Number(localStorage.getItem('maxValue')))
   const [error, setError] = useState<string>('')
 
 
-  useEffect(() => {
-    const stateAsString = localStorage.getItem('minValue')
-    if (stateAsString) {
-      const state = JSON.parse(stateAsString)
-    }
+  // useEffect(() => {
+  //   const stateAsString = localStorage.getItem('minValue')
+  //   if (stateAsString) {
+  //     const state = JSON.parse(stateAsString)
+  //   }
 
 
-  }, [])
+  // }, [])
 
   const inc = () => {
     if (count < maxValue) {
@@ -38,7 +38,8 @@ function App() {
         maxValue={maxValue}
         error={error}
         setError={setError}
-        setMinValue={setMinValue} />
+        setMinValue={setMinValue}
+        minValue={minValue} />
       <Count inc={inc}
         reset={reset}
         minValue={minValue}
