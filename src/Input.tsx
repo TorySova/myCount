@@ -3,23 +3,23 @@ import React, { ChangeEvent } from 'react';
 type PropsType = {
     name: string
     value: number
-    setValue: (valeu: number) => void
     error: string
+    setValue: (number: number) => void
 }
 
 const Input = (props: PropsType) => {
-    const { name, setValue, value, error } = props
+    // const { name, setValue, value, error } = props
     const onChangeHeandler = (e: ChangeEvent<HTMLInputElement>) => {
-        setValue(+e.currentTarget.value)
+        props.setValue(+e.currentTarget.value)
     }
 
     return (
         <div className='item'>
-            <span >{name}</span>
+            <span >{props.name}</span>
             <input type="number"
                 min='-1'
-                value={value}
-                className={error ? 'inputError' : 'input'}
+                value={props.value}
+                className={props.error ? 'inputError' : 'input'}
                 onChange={onChangeHeandler} />
         </div>
     )

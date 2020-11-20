@@ -1,50 +1,40 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import './App.css';
 import Count from './Count';
 import Setting from './Setting';
+import { incValueAC, resetValueAC, setValueAC, StateType } from './state/coutn-reducer';
+import { AppStoreType } from './state/store';
 
 function App() {
-
-  const [count, setCount] = useState<number>(0)
-  const [minValue, setMinValue] = useState<number>(Number(localStorage.getItem('minValue')))
-  const [maxValue, setMaxValue] = useState<number>(Number(localStorage.getItem('maxValue')))
+  debugger
+  const counter = useSelector<AppStoreType, StateType>((state) => state.count)
+  const dispatch = useDispatch()
+  
   const [error, setError] = useState<string>('')
 
-
-  // useEffect(() => {
-  //   const stateAsString = localStorage.getItem('minValue')
-  //   if (stateAsString) {
-  //     const state = JSON.parse(stateAsString)
-  //   }
-
-
-  // }, [])
-
   const inc = () => {
-    if (count < maxValue) {
-      setMinValue(minValue + 1)
-    }
+    dispatch(incValueAC())
   }
 
   function reset() {
-    setMinValue(count)
+    dispatch(resetValueAC())
+  }
+
+  const set = (maxValue: number, minValue: number, count: number) => {
+    dispatch(setValueAC(maxValue, minValue, count))
   }
 
   return (
     <div className="app">
-      <Setting setCount={setCount}
-        setMaxValue={setMaxValue}
-        count={count}
-        maxValue={maxValue}
+      <Setting 
+        counter={counter}
         error={error}
         setError={setError}
-        setMinValue={setMinValue}
-        minValue={minValue} />
+        set={set} />
       <Count inc={inc}
         reset={reset}
-        minValue={minValue}
-        maxValue={maxValue}
-        count={count}
+        counter={counter}
         error={error} />
     </div>
   );

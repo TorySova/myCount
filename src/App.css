@@ -41,7 +41,7 @@ body{
   border-radius: 5px;
   padding: 10px;
   margin: 10px;
-  background: #abd1c6;
+  background:#b0c6da;
   height: 300px;
   min-width: 370px;
 }
@@ -58,7 +58,7 @@ body{
 } */
 
 .displaying{
-  background: #f9bc60;
+  background:#86B6FF;
   border: 2px solid black;
   border-radius: 15px;
   padding: 10px;
@@ -103,7 +103,7 @@ body{
   justify-content: space-around;
   border: 2px solid black;
   border-radius: 15px;
-  background: #f9bc60;
+  background:#86B6FF;
   height: 80px;
   min-width: 100%;
   align-items: center;
@@ -114,7 +114,7 @@ body{
   border-radius: 15px;
   border: 2px solid black;
   margin: 8px;
-  background: #ffffff;
+  background:#DFF1FF;
   height: 50px;
   width: 140px;
   text-align: center;
